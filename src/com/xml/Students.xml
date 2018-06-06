@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+   <student rollno = "393">
+      <firstname>Dinkar</firstname>
+      <lastname>Das</lastname>
+      <marks>90</marks>
+      <address>
+       	<houseno>C502</houseno>
+      	<city>Pune</city>
+      </address>
+   </student>
+   
+   <student rollno = "493">
+      <firstname>Vaneet</firstname>
+      <lastname>Gupta</lastname>
+      <marks>98</marks>
+      <address></address>
+   </student>
+   
+   <student rollno = "593">
+      <firstname>Jasvir</firstname>
+      <lastname>Singn</lastname>
+      <marks>89</marks>
+      <address>
+       	<houseno>C504</houseno>
+      	<city>Mumbai</city>
+      </address>
+   </student>
+</class>

@@ -1,0 +1,5 @@
+1,Fast & Furious,Action,Tom Cruise,20/02/2000,120.50
+2,Dangal,Action,Amir Khan,12/03/2007,100.00
+3,Hum Aap Ke He Kaun,Family,Salman Khan,23/12/2006,180.99
+4,Jungle Book,Children,Bhagira,13/05/2008,145.00
+5,Pad Man,Family,Akshay kumar,12/09/2009,170.45	

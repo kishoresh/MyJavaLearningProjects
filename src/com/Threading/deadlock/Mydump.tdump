@@ -1,0 +1,110 @@
+2018-03-06 11:50:36
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.141-b15 mixed mode):
+
+"DestroyJavaVM" #13 prio=5 os_prio=0 tid=0x000000000508e000 nid=0x19d0 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"t3" #12 prio=5 os_prio=0 tid=0x00000000203d9800 nid=0x45c0 waiting for monitor entry [0x0000000020c3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.Threading.deadlock.SyncThread.run(ThreadDeadlock.java:22)
+	- waiting to lock <0x000000076b4705a8> (a java.lang.Object)
+	- locked <0x000000076b4705c8> (a java.lang.Object)
+	at java.lang.Thread.run(Unknown Source)
+
+"t2" #11 prio=5 os_prio=0 tid=0x00000000203d3800 nid=0x30a8 waiting for monitor entry [0x0000000020b3e000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.Threading.deadlock.SyncThread.run(ThreadDeadlock.java:22)
+	- waiting to lock <0x000000076b4705c8> (a java.lang.Object)
+	- locked <0x000000076b4705b8> (a java.lang.Object)
+	at java.lang.Thread.run(Unknown Source)
+
+"t1" #10 prio=5 os_prio=0 tid=0x00000000203d3000 nid=0x4110 waiting for monitor entry [0x0000000020a3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.Threading.deadlock.SyncThread.run(ThreadDeadlock.java:22)
+	- waiting to lock <0x000000076b4705b8> (a java.lang.Object)
+	- locked <0x000000076b4705a8> (a java.lang.Object)
+	at java.lang.Thread.run(Unknown Source)
+
+"Service Thread" #9 daemon prio=9 os_prio=0 tid=0x0000000020359800 nid=0x52e4 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #8 daemon prio=9 os_prio=2 tid=0x000000001e910000 nid=0x4558 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=2 tid=0x000000001e8f4800 nid=0x247c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=2 tid=0x000000001e8ee000 nid=0x7ac waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000000001e8ec800 nid=0x568c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000000001e8eb800 nid=0x506c runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000000001e8da800 nid=0x61b4 in Object.wait() [0x000000001fd3f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000076b408ec8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	- locked <0x000000076b408ec8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x00000000052c0800 nid=0x5d54 in Object.wait() [0x000000001fc3f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000076b406b68> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Unknown Source)
+	at java.lang.ref.Reference.tryHandlePending(Unknown Source)
+	- locked <0x000000076b406b68> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Unknown Source)
+
+"VM Thread" os_prio=2 tid=0x000000001e8b8000 nid=0x5f94 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x00000000051e7800 nid=0xdf0 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x00000000051e9000 nid=0x3c24 runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x00000000051ea800 nid=0x57a8 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x00000000051ed000 nid=0x5a84 runnable 
+
+"VM Periodic Task Thread" os_prio=2 tid=0x000000002037f000 nid=0x5b68 waiting on condition 
+
+JNI global references: 5
+
+
+Found one Java-level deadlock:
+=============================
+"t3":
+  waiting to lock monitor 0x00000000052c9978 (object 0x000000076b4705a8, a java.lang.Object),
+  which is held by "t1"
+"t1":
+  waiting to lock monitor 0x00000000052c5828 (object 0x000000076b4705b8, a java.lang.Object),
+  which is held by "t2"
+"t2":
+  waiting to lock monitor 0x00000000052c98c8 (object 0x000000076b4705c8, a java.lang.Object),
+  which is held by "t3"
+
+Java stack information for the threads listed above:
+===================================================
+"t3":
+	at com.Threading.deadlock.SyncThread.run(ThreadDeadlock.java:22)
+	- waiting to lock <0x000000076b4705a8> (a java.lang.Object)
+	- locked <0x000000076b4705c8> (a java.lang.Object)
+	at java.lang.Thread.run(Unknown Source)
+"t1":
+	at com.Threading.deadlock.SyncThread.run(ThreadDeadlock.java:22)
+	- waiting to lock <0x000000076b4705b8> (a java.lang.Object)
+	- locked <0x000000076b4705a8> (a java.lang.Object)
+	at java.lang.Thread.run(Unknown Source)
+"t2":
+	at com.Threading.deadlock.SyncThread.run(ThreadDeadlock.java:22)
+	- waiting to lock <0x000000076b4705c8> (a java.lang.Object)
+	- locked <0x000000076b4705b8> (a java.lang.Object)
+	at java.lang.Thread.run(Unknown Source)
+
+Found 1 deadlock.
+
