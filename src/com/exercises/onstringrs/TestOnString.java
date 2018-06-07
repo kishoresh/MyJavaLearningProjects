@@ -3,8 +3,6 @@ package com.exercises.onstringrs;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import org.apache.camel.impl.StringDataFormat;
-
 /*
  * Exercises on String :
  * 1. Count the number of words in a String.
