@@ -51,7 +51,7 @@ public class TestArrayList {
 
 			public Student(int rollNo, String Namme, int age) {
 				this.rollNo = rollNo;
-				this.Name = Name;
+				this.Name = Namme;
 				this.age = age;
 			}
 		}
@@ -100,11 +100,15 @@ public class TestArrayList {
 
 		//Add user defined class object list (Student) to Arraylist and Iterate.
 		ArrayList<Student> sl = new ArrayList<Student>();
-
-		sl.add(new Student(101, "Kishore1", 40));
+		Student std1 = new Student(101, "Kishore1", 40);
+		sl.add(std1);
 		sl.add(new Student(102, "Kishore2", 41));
 		sl.add(new Student(103, "Kishore3", 42));
 
+		//Now what happens to the value in the arraylist ?
+		//Here the obj std1 is not a candidate for GC. Becz an obj is garbage collected when there is no reference to the object. Here std1 also have another reference in the arraylist. 
+		std1 = null;
+	
 		Iterator itr2 = sl.iterator();
 		while(itr2.hasNext()){
 			Student s = (Student)itr2.next();
@@ -116,6 +120,9 @@ public class TestArrayList {
 		//al.clear();`   //This will clear the arraylist
 		String[] simpleArray = al.toArray(new String[al.size()]);
 		System.out.println("The array created after the conversion is : " + Arrays.toString(simpleArray));
+		
+		
+		
 	}
 
 }
