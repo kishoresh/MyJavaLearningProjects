@@ -65,6 +65,7 @@ class Checker implements Comparator<Player>{
 public class ComparatorTest {
 
 	public static void main(String[] args) {
+		String temp[] = {"a", "b"};
 		Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
 

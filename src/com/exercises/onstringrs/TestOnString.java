@@ -149,8 +149,7 @@ public class TestOnString {
 		}
 			
 		System.out.println("String with Removed white spacess = " + s);
-		System.out.println("String with Removed white spacess = " + sb);
-		
+		System.out.println("String with Removed white spacess = " + sb);		
 	}
 	
 	//12. Formatting strings and numbers
@@ -198,6 +197,11 @@ public class TestOnString {
 	}
 	
 	public static void main(String[] args) {
+		//Test multidimensional array initialization.
+		String str[][] = new String[2][];   //This is correct initialization. 1st dimension is 2 and 2nd dimension is variable
+		str[0] = new String[10];
+		str[1] = new String[4];
+		
 		System.out.println(str);
 		CapitalizeEachWordInAString();
 		ToggleEachWordInAString();
