@@ -48,12 +48,8 @@ class OracleHelper implements Helper{
 
 public class FacadeHelper {
 
-	public static enum DBType{
-		SQL, ORACLE;
-	}
-	public static enum ReportType{
-		MSWORD, PDF;
-	}
+	public static enum DBType {SQL, ORACLE;}
+	public static enum ReportType {MSWORD, PDF;}
 	
 	public static void generateReport(DBType dbType, ReportType reportType, String tablename){
 		Connection con = null;

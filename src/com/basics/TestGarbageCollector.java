@@ -1,6 +1,7 @@
 package com.basics;
 /*
- * Garbage collection demo.
+ * Garbage collection demo. 
+ * When there is no reference left for an obj, gc calls finalize()
  * 
  */
 public class TestGarbageCollector {
@@ -15,7 +16,7 @@ public class TestGarbageCollector {
 		TestGarbageCollector testgc2 = new TestGarbageCollector();
 		
 		testgc1 = null;
-		testgc2 = null;
+		//testgc2 = null;
 		System.gc();
 	}
 

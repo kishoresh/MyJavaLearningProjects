@@ -40,6 +40,7 @@ public class TestPhoneBook {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int n=in.nextInt();
+	
 		Map<String, Integer> phoneMap = new HashMap<>();
 		in.nextLine();
 		for(int i=0;i<n;i++)

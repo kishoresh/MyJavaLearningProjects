@@ -2,7 +2,7 @@ package com.jms.queue;
 
 import java.io.Serializable;
 
-public class Student implements Serializable{
+public class Student implements Serializable{	
 	int id;
 	String name;
 	
