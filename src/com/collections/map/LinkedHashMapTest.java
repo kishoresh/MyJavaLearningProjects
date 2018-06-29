@@ -28,7 +28,7 @@ public class LinkedHashMapTest {
 		lhmap = new LinkedHashMap<String, String>(){
 			@Override
 			protected boolean removeEldestEntry(java.util.Map.Entry<String, String> eldest) {
-				return size() > num;
+				return size() > num;                         //This is the condition, when the eldest entry will be removed.
 			}
 		};
 		

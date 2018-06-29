@@ -9,7 +9,7 @@ public class FlyweightPatternDemo {
 	
 	private static final String[] colors = {"Red","Blue","Yellow","Green","Black"};
 	
-	private static String getRandomColors(){
+	private static String getRandomColors(){		
 		return colors[(int)(Math.random()*colors.length)];	
 	}
 	

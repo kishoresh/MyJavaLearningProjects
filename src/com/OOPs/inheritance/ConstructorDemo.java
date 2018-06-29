@@ -32,7 +32,7 @@ class ChildClass extends ParentClass{
 	
 	public void disp(){
 		System.out.println("Child Class disp() method called.");
-		super.disp();
+		super.disp();     //This is allowed. Only in case of Constructor super() has to be the 
 	}
 }
 

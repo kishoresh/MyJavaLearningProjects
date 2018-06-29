@@ -39,9 +39,10 @@ public class TestArrayList {
 		ArrayList arrInt = new ArrayList();
 		arrInt.add(23);
 		arrInt.add(25);
+		arrInt.add(1,  24);      //This will insert 24, between 23 & 25 
 
-		int j = (int) arrInt.get(0);        //Autoboxing
-		System.out.println("Value at 0 index = "+j);
+		int j = (int) arrInt.get(2);        //Autoboxing
+		System.out.println("Value at 2 index = "+j);
 
 		//ArrayList testing
 		class Student{

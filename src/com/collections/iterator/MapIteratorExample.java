@@ -55,7 +55,7 @@ public class MapIteratorExample {
 	
 	public static void AddDataToHashMap(){
 		hm.put(1, "Kishore");
-		hm.put(4, "Naresh");   //Observe the Key is 4. But surprisingly HM is maintaining the sorting order, see the o/p
+		hm.put(4, "Naresh"); //Observe the Key is 4. But surprisingly HM is maintaining the sorting order. Becz key is Integer, and it already implemnents equals().
 		hm.put(2, "Balaji");
 		hm.put(3, "Sharma");				
 	}

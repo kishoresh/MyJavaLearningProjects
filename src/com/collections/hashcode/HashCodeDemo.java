@@ -40,7 +40,7 @@ public class HashCodeDemo {
 		Student s1 = new Student(101, "Kishore", 43);		
 	    Student s2 = new Student(101, "Balaji", 34); //This will be ignored, for duplicate RegID, if we override the Equals() & Hashcode().
 		Student s3 = new Student(103, "Usha", 41);
-		
+		Student s4 = new Student(103, "Usha", 41);
 		
 		ReportCard r1 = new ReportCard(88.5, 67.6, 78.3);
 		ReportCard r2 = new ReportCard(82.5, 63.6, 72.3);
@@ -51,6 +51,7 @@ public class HashCodeDemo {
 		hm2.put(s1, r1);
 		hm2.put(s2, r2);
 		hm2.put(s3, r3);
+		hm2.put(s4, r3);
 	}
 
 	public static void main(String[] args){

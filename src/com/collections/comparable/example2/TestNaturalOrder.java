@@ -31,14 +31,14 @@ class Person implements Comparable<Person>{
 
 	@Override
 	public int compareTo(Person o) {
-//		if (o.id == id){
-//			return 0;
-//		}else if (o.id > id){
-//			return 1;
-//		}else{
-//			return -1;	
-//		}		
-		return name.compareTo(o.name);
+		if (o.id == id){
+			return 0;
+		}else if (id > o.id){
+			return 1;
+		}else{
+			return -1;	
+		}		
+//		return name.compareTo(o.name);
 	}
 }
 

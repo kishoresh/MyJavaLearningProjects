@@ -14,5 +14,4 @@ public class NameComparator implements Comparator {
 
 		return st1.Name.compareTo(st2.Name);
 	}
-
 }

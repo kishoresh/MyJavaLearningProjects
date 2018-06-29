@@ -16,7 +16,7 @@ class A extends Base{
     	System.out.println("I am in class A");
     	super.exceptMethod();    
     	}catch (Exception e){
-    		System.out.println(e.getMessage());
+    		System.out.println("From class A - " + e.getMessage());
     	}finally{
     		System.out.println("Finally");
     	}

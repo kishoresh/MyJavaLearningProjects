@@ -1,10 +1,12 @@
 package com.exercises.hackerrank;
+/*
+ * Take a series of parenthesis as input and then check if it is balanced.
+ * URL : https://www.youtube.com/watch?v=akVVgmVb01I
+ */
 
 import java.util.Scanner;
 import java.util.Stack;
-/*
- * URL : https://www.youtube.com/watch?v=akVVgmVb01I
- */
+
 public class CheckBalancedParenthesis {
 
 	/*
@@ -45,6 +47,23 @@ public class CheckBalancedParenthesis {
 			return true;
 		}
 		return false;		
+	}
+	
+	public static boolean isBalanced(String str){
+		String OPEN = "{([", CLOSE="})]";
+		Stack<Character> stack = new Stack<>();
+		for(int i=0; i<str.length(); i++){
+			Character ch = str.charAt(i);
+			if (OPEN.indexOf(ch) > 0)
+				stack.push(ch);
+			else if (CLOSE.indexOf(ch) > 0){
+				if (!isParenthesisMatching(ch, stack.pop()))
+					return false;				
+			}
+			 if (stack.size() > 0)
+				 return false;
+		}
+		return true;
 	}
 	
 	public static void main(String[] args) {

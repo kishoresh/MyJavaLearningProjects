@@ -34,7 +34,7 @@ public class TestOnString {
 	}
 	
 	//3. Toggle each word in a string. i.e toggle = tOGGLE 
-	public static void ToggleEachWordInAString(){
+	public static String ToggleEachWordInAString(){
 		String words[] = str.split("\\s");
 		String toggle = "";
 		
@@ -48,6 +48,7 @@ public class TestOnString {
 			toggle += firstChar.toLowerCase() + afterFirst.toUpperCase() + " ";
 		}
 		System.out.println("Toggle each word in a string " + toggle);
+		return toggle;
 	}
 	
 	//4. Capitalize each word in a string.

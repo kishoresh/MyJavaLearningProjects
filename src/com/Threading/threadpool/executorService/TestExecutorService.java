@@ -20,13 +20,14 @@ class Task implements Runnable{
 	}
 	
 	public void run() {
-		System.out.println("Thread Name : " + Thread.currentThread().getName() + " " + threadname);
+		System.out.println("Thread Name : " + Thread.currentThread().getName() + " " + threadname + " - Started.");
 		try{
 			//fake computation time.
 			Thread.sleep(1000);	
 		}catch (InterruptedException ex){
 			ex.printStackTrace();
-		}		
+		}
+		System.out.println("Thread Name : " + Thread.currentThread().getName() + " " + threadname + " - Ended.");
 	}
 }
 
@@ -53,6 +54,7 @@ public class TestExecutorService {
 	
 	/*
 	 * SingleThreadExecutor : Only one thread is used to run the task's. Hence the tasks are executed in sequence.
+	 * This is more or less similar to running a single thread sequentially. Only advantage i can see is the same thread i.e. in the pool, we are reusing, no need to create the thread. 
 	 */
 	static public void createThreadUsingSingleThreadedExecutor(){
 		ExecutorService execService = Executors.newSingleThreadExecutor();
@@ -89,10 +91,10 @@ public class TestExecutorService {
 	
 	public static void main(String[] args) {
 		//createThreads();
-		//createThreadsUsingFixedThreadPool();
+		createThreadsUsingFixedThreadPool();
 		//createThreadUsingSingleThreadedExecutor();
 		//createSchudeledThreadPool();
-		createCachedThreadPool();
+		//createCachedThreadPool();
 	}
 
 }

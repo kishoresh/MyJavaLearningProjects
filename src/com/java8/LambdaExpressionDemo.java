@@ -10,11 +10,16 @@ package com.java8;
  * > You may not use the return keyword if there is only one line in body, requires only for multiple line in the body. 
  */
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 interface Drawable{
@@ -129,6 +134,19 @@ public class LambdaExpressionDemo {
 				                              .sum();
 		System.out.println("Total Price (for productID > 2) = " + totPrice);
 		
+		//8. Displaying the length of each element
+		List<String> arrList = Arrays.asList("fdssd", "adsfasdf", "asdfsdfsd", "ewrwer");
+		arrList.stream()
+		       .map(e -> e.length())
+		       .forEach(System.out :: println);
+		
+		//9. Using Stream map(Function mapper) return the same list with uppercase.
+		List<String> result = arrList.stream()
+				                     .map(String :: toUpperCase)   //Returns a stream consisting of the results of applying the given function to the elements of the stream.
+				                     .collect(Collectors.toList());//Reduction operation which changes the arrList and returns a resultset.
+		result.forEach(System.out :: println);
+		
+			
 	}
 
 }

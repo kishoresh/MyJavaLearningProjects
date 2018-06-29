@@ -1,5 +1,7 @@
 package com.designpattern.structural.flyweight;
 
+import java.util.function.Supplier;
+
 interface Shape {	
 	void draw();
 }

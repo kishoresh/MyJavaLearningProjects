@@ -15,6 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
 public class SortByValueExample {
 
@@ -24,6 +25,12 @@ public class SortByValueExample {
 		}		
 	}	
 	
+//	private static Map<String, Integer> sortByValueUsingStream(Map<String, Integer> unsortMap){
+//		Map<String, Integer> result = unsortMap.entrySet().stream()
+//				.sorted(Map.Entry.comparingByValue().reversed())
+//		
+//	}
+//	
 	private static Map<String, Integer> sortByValue(Map<String, Integer> unsortMap){
 		//1. Convert Map to List of Map
 		List<Map.Entry<String, Integer>> list = new LinkedList<>(unsortMap.entrySet());
@@ -67,6 +74,10 @@ public class SortByValueExample {
 		unsortedMap.put("j", 50);
 		unsortedMap.put("m", 2);
 		unsortedMap.put("f", 99);
+		
+		//TreeMap<String, Integer> tmap = new TreeMap<>(unsortedMap);
+		//System.out.println("Sorted Map using TreeMap.....");		
+		//printMap(tmap);
 		
 		System.out.println("Unsorted Map.....");		
 		printMap(unsortedMap);

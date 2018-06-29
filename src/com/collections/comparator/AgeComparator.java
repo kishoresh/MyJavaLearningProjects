@@ -18,6 +18,6 @@ public class AgeComparator implements Comparator {
 		else if (st1.age > st1.age)
 			return 1;
 		else
-			return -1;
+			return -1;		
 	}
 }

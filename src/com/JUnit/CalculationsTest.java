@@ -1,6 +1,10 @@
 package com.JUnit;
-
-import static org.junit.Assert.*;
+/*
+ * JUnit Test :
+ * Note :- 2 Jars to be added - hamcrest-core-1.3.jar &  junit-4.12.jar
+ */
+		
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -12,6 +16,7 @@ public class CalculationsTest {
 		assertEquals(63, Calculations.findMax(new int[]{3,12,45,32,13,43,63}));
 		assertEquals(45, Calculations.findMax(new int[]{23,12,45,32,13,43}));
 		assertEquals(10, Calculations.findMax(new int[]{2,3,4,5,6,7,8,9,10}));
+		
 	}
 	
 	@Test

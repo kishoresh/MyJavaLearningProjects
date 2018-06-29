@@ -18,14 +18,16 @@ class User{
 		this.name = name;
 	}
 	public void sendmessage(String msg){
-		
+		System.out.println("Messabe by " + getName());
 	}
 }
 
 public class MediatorPatternDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		User user1 = new User("Kishore");
+		User user2 = new User("Milli");
+		User user3 = new User("Prisha");
 
 	}
 

@@ -100,6 +100,7 @@ public class Misc {
 		return true;
 	}
 	
+	
 	//6. Strings can be used in switch case statement, in Java 7
 	public static void PrintColoursUsingSwitchCase(String color){
 		switch(color){
